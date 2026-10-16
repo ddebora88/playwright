@@ -31,10 +31,13 @@ Butuh [Node.js](https://nodejs.org/) versi 18 ke atas.
 
 ```bash
 npm install
-npx playwright install        # download browser Chromium, Firefox, WebKit
 ```
 
+Cukup satu perintah — `npm install` otomatis men-trigger script `postinstall` yang menjalankan `playwright install` (download browser Chromium, Firefox, WebKit ke cache lokal, mis. `~/Library/Caches/ms-playwright` di macOS). Tidak perlu langkah terpisah.
+
 > Kalau cuma mau pakai Chromium (lebih cepat, lebih ringan): `npx playwright install chromium`
+>
+> **Troubleshooting** — kalau muncul error seperti `browserType.launch: Executable doesn't exist at .../ms-playwright/...`, berarti browser belum (atau belum lengkap) ter-download. Jalankan manual: `npx playwright install`, lalu ulangi `npm test`. Ini wajar terjadi kalau sebelumnya pernah `npm install` versi lama project ini (sebelum ada `postinstall`), atau cache browser sempat terhapus.
 
 ## Menjalankan test
 
