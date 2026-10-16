@@ -1,0 +1,19 @@
+node_modules/
+
+# Hasil run Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/blob-report/
+
+# Trace & artefak debug
+*.trace.zip
+
+# OS / editor
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+# Env lokal
+.env
+.env.local
